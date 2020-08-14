@@ -2,6 +2,14 @@ import logging
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 from fetch_link import get_info
 import re
+
+#TELEGRAM'S bot access token
+ACCESS_TOKEN = ''
+
+
+
+
+
 regex = re.compile(
         r'^(?:http|ftp)s?://' # http:// or https://
         r'(?:(?:[A-Z0-9](?:[A-Z0-9-]{0,61}[A-Z0-9])?\.)+(?:[A-Z]{2,6}\.?|[A-Z0-9-]{2,}\.?)|' #domain...
@@ -12,7 +20,6 @@ regex = re.compile(
 
 
 
-ACCESS_TOKEN = ''
 
 def fetch_link(url):
     ydl_opts ={'simulate': 'true'}
